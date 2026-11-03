@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Armlab</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./dist/vendor/three/build/three.module.js",
+          "three/addons/": "./dist/vendor/three/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="viewport"></div>
+    <aside id="panel">
+      <h1>Armlab</h1>
+      <p class="hint">Drag the orange target. The arm solves inverse kinematics live.</p>
+
+      <h2>Inverse kinematics</h2>
+      <div id="ik-status" class="status"></div>
+      <label class="check"><input type="checkbox" id="point-down" /> Keep the tool pointing down</label>
+
+      <h2>Joints</h2>
+      <div id="joints"></div>
+
+      <h2>Collisions</h2>
+      <div id="collision-status" class="status"></div>
+
+      <h2>Path</h2>
+      <div class="buttons">
+        <button id="add-waypoint">Add waypoint</button>
+        <button id="play">Play</button>
+        <button id="clear" class="ghost">Clear</button>
+      </div>
+      <div id="path-status" class="status"></div>
+    </aside>
+    <p id="help">Left drag: orbit. Right drag: pan. Scroll: zoom.</p>
+    <script type="module" src="./dist/src/ui/main.js"></script>
+  </body>
+</html>
