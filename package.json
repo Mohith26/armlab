@@ -1,0 +1,27 @@
+{
+  "name": "armlab",
+  "version": "0.1.0",
+  "description": "A browser robot arm simulator: forward and inverse kinematics, joint limits, trajectories and collision checks.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "author": "Mohith Gajjela",
+  "scripts": {
+    "build": "tsc -p . && node scripts/vendor.mjs",
+    "typecheck": "tsc -p . --noEmit",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "start": "npm run build && node scripts/serve.mjs",
+    "bench": "npm run build && node scripts/bench.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/three": "^0.170.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
